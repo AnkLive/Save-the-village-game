@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 60848738}
   - component: {fileID: 60848740}
   - component: {fileID: 60848739}
+  - component: {fileID: 60848741}
   m_Layer: 5
   m_Name: Harvest Timer
   m_TagString: Untagged
@@ -182,13 +183,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: ae5d12abe207cc644af9d501ada4f15a, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillClockwise: 0
+  m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &60848740
@@ -199,6 +200,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60848737}
   m_CullTransparentMesh: 1
+--- !u!114 &60848741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60848737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e33b789c82faf346ad99a578670c81f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 5
 --- !u!1 &317164948
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,6 +1415,7 @@ GameObject:
   - component: {fileID: 1475208166}
   - component: {fileID: 1475208168}
   - component: {fileID: 1475208167}
+  - component: {fileID: 1475208169}
   m_Layer: 5
   m_Name: Warrior Timer
   m_TagString: Untagged
@@ -1449,13 +1464,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: ae5d12abe207cc644af9d501ada4f15a, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillClockwise: 0
+  m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1475208168
@@ -1466,6 +1481,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1475208165}
   m_CullTransparentMesh: 1
+--- !u!114 &1475208169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475208165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e33b789c82faf346ad99a578670c81f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 5
 --- !u!1 &1540620311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1525,13 +1553,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: ae5d12abe207cc644af9d501ada4f15a, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillClockwise: 0
+  m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1540620314
@@ -1840,6 +1868,7 @@ GameObject:
   - component: {fileID: 1738399837}
   - component: {fileID: 1738399839}
   - component: {fileID: 1738399838}
+  - component: {fileID: 1738399840}
   m_Layer: 5
   m_Name: Peasant Timer
   m_TagString: Untagged
@@ -1888,13 +1917,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: ae5d12abe207cc644af9d501ada4f15a, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillClockwise: 0
+  m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1738399839
@@ -1905,6 +1934,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738399836}
   m_CullTransparentMesh: 1
+--- !u!114 &1738399840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738399836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e33b789c82faf346ad99a578670c81f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 5
 --- !u!1 &1742913263
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,6 +2082,7 @@ GameObject:
   - component: {fileID: 1827791719}
   - component: {fileID: 1827791721}
   - component: {fileID: 1827791720}
+  - component: {fileID: 1827791722}
   m_Layer: 5
   m_Name: Eating Timer
   m_TagString: Untagged
@@ -2088,13 +2131,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: ae5d12abe207cc644af9d501ada4f15a, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillClockwise: 0
+  m_FillOrigin: 2
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1827791721
@@ -2105,6 +2148,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1827791718}
   m_CullTransparentMesh: 1
+--- !u!114 &1827791722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827791718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e33b789c82faf346ad99a578670c81f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 5
 --- !u!1 &1933923046
 GameObject:
   m_ObjectHideFlags: 0
