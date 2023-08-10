@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43487d3f3da1d874d93403d62bb0dc08, type: 3}
+  m_Name: GameData
+  m_EditorClassIdentifier: 
+  <PeasantCount>k__BackingField: 3
+  <WarriorsCount>k__BackingField: 0
+  <WheatCount>k__BackingField: 10
+  <WheatPerPeasant>k__BackingField: 2
+  <WheatToWarrriors>k__BackingField: 5
+  <PeasantCost>k__BackingField: 4
+  <WarriorCost>k__BackingField: 8
+  <PeasantCreateTime>k__BackingField: 5
+  <WarriorCreateTime>k__BackingField: 8
+  <RaidMaxTime>k__BackingField: 20
+  <RaidIncrease>k__BackingField: 2
+  <NextRaid>k__BackingField: 0
