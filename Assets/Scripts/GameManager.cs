@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
         TimerCreate(Data.PeasantTimer, PeasantTimerImg, Data.PeasantCreateTime, Data.PeasantCount, PeasantButton);
         TimerCreate(Data.WarriorTimer, WarriorTimerImg, Data.WarriorCreateTime, Data.WarriorsCount, WarriorButton);
         UpdateText();
+        GameOver();
     }
 
     public void TimeToRaid() 
