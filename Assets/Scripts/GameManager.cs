@@ -4,8 +4,6 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
-    [field: SerializeField] public GameData Data { get; set; }
-
     [field: SerializeField] public GameObject GameOverScreen { get; set; }
 
     [field: SerializeField] public ImageTimer HarvestTimer { get; set; }
@@ -22,76 +20,120 @@ public class GameManager : MonoBehaviour
     [field: SerializeField] public Text WarriorText { get; set; }
     [field: SerializeField] public Text EatingText { get; set; }
 
+    [field: SerializeField] public int PeasantCount { get; set; }
+    [field: SerializeField] public int WarriorsCount{ get; set; }
+    public int WheatCount;
+
+    [field: SerializeField] public int WheatPerPeasant{ get; set; }
+    [field: SerializeField] public int WheatToWarrriors{ get; set; }
+
+    [field: SerializeField] public int PeasantCost{ get; set; }
+    [field: SerializeField] public int WarriorCost{ get; set; }
+
+    [field: SerializeField] public float PeasantCreateTime{ get; set; }
+    [field: SerializeField] public float WarriorCreateTime{ get; set; }
+    [field: SerializeField] public float RaidMaxTime{ get; set; }
+
+    [field: SerializeField] public int RaidIncrease{ get; set; }
+    [field: SerializeField] public int NextRaid{ get; set; }
+
+    [field: SerializeField] public float PeasantTimer { get; set; } = -2;
+    [field: SerializeField] public float WarriorTimer { get; set; } = -2;
+    [field: SerializeField] public float RaidTimer { get; set; }
+
     private void Start() 
     {
         UpdateText();
-        Data.RaidTimer = Data.RaidMaxTime;
+        RaidTimer = RaidMaxTime;
     }
 
     private void Update() 
     {
+        Debug.Log(PeasantTimer);
         FoodCycle();
-        TimerCreate(Data.PeasantTimer, PeasantTimerImg, Data.PeasantCreateTime, Data.PeasantCount, PeasantButton);
-        TimerCreate(Data.WarriorTimer, WarriorTimerImg, Data.WarriorCreateTime, Data.WarriorsCount, WarriorButton);
+        TimerCreatePeasant();
+        TimerCreateWarrior();
         UpdateText();
+        TimeToRaid();
         GameOver();
     }
 
-    public void TimeToRaid() 
+    private void TimeToRaid() 
     {
-        Data.RaidTimer -= Time.deltaTime;
-        RaidTimerImg.fillAmount = Data.RaidTimer / Data.RaidMaxTime;
-        if(Data.RaidTimer <= 0)
+        RaidTimer -= Time.deltaTime;
+        RaidTimerImg.fillAmount = RaidTimer / RaidMaxTime;
+        if(RaidTimer <= 0)
         {
-            Data.RaidTimer = Data.RaidMaxTime;
-            Data.WarriorsCount -= Data.NextRaid;
-            Data.NextRaid += Data.RaidIncrease;
+            RaidTimer = RaidMaxTime;
+            WarriorsCount -= NextRaid;
+            NextRaid += RaidIncrease;
         }
     }
 
-    public void OnClickCreatePeasant() => CreateCharapter(Data.WheatCount, Data.PeasantCost, Data.PeasantTimer, Data.PeasantCreateTime, PeasantButton);
-    public void OnClickCreateWarrior() => CreateCharapter(Data.WheatCount, Data.WarriorCost, Data.WarriorTimer, Data.WarriorCreateTime, WarriorButton);
-
-    public void TimerCreate(float Timer, Image TimerImg, float CreateTime, int Count, Button ButtonCreate)
+    private void TimerCreatePeasant()
     {
-        if(Timer > 0)
+        if(PeasantTimer > 0)
         {
-            Timer -= Time.deltaTime;
-            TimerImg.fillAmount =Timer / CreateTime;
+            PeasantTimer -= Time.deltaTime;
+            PeasantTimerImg.fillAmount = PeasantTimer / PeasantCreateTime;
         }
-        else if(Timer > -1) 
+        else if(PeasantTimer > -1) 
         {
-            TimerImg.fillAmount = 1;
-            ButtonCreate.interactable = true;
-            Count++;
-            Timer = -2;
+            PeasantTimerImg.fillAmount = 1;
+            PeasantButton.interactable = true;
+            PeasantCount++;
+            PeasantTimer = -2;
         }
     }
-    public void CreateCharapter(int WheatCount, int Cost, float Timer, float CreateTime, Button ButtonCreate) 
+
+    private void TimerCreateWarrior()
     {
-        WheatCount -= Cost;
-        Timer = CreateTime;
-        ButtonCreate.interactable = false;
+        if(WarriorTimer > 0)
+        {
+            WarriorTimer -= Time.deltaTime;
+            WarriorTimerImg.fillAmount = WarriorTimer / WarriorCreateTime;
+        }
+        else if(WarriorTimer > -1) 
+        {
+            WarriorTimerImg.fillAmount = 1;
+            WarriorButton.interactable = true;
+            WarriorsCount++;
+            WarriorTimer = -2;
+        }
+    }
+
+    public void CreatePeasant() 
+    {
+        WheatCount -= PeasantCost;
+        PeasantTimer = PeasantCreateTime;
+        PeasantButton.interactable = false;
+    }
+
+    public void CreateWarrior() 
+    {
+        WheatCount -= WarriorCost;
+        WarriorTimer = WarriorCreateTime;
+        WarriorButton.interactable = false;
     }
 
     private void FoodCycle()
     {
         if(HarvestTimer.Tick)
-            Data.WheatCount += Data.PeasantCount * Data.WheatPerPeasant;
+            WheatCount += PeasantCount * WheatPerPeasant;
         if(EatingTimer.Tick)
-            Data.WheatCount -= Data.WarriorsCount * Data.WheatToWarrriors;
+            WheatCount -= WarriorsCount * WheatToWarrriors;
     }
 
     private void UpdateText() 
     {
-        PeasantText.text = Data.PeasantCount.ToString();
-        WarriorText.text = Data.WarriorsCount.ToString();
-        EatingText.text = Data.WheatCount.ToString();
+        PeasantText.text = PeasantCount.ToString();
+        WarriorText.text = WarriorsCount.ToString();
+        EatingText.text = WheatCount.ToString();
     }
 
     private void GameOver() 
     {
-        if(Data.WarriorsCount < 0 || Data.WheatCount < 0)
+        if(WarriorsCount < 0 || WheatCount < 0)
         {
             Time.timeScale = 0;
             GameOverScreen.SetActive(true);

@@ -1057,7 +1057,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1812977097}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OnClickCreateWarrior
+        m_MethodName: CreateWarrior
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2425,7 +2425,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d6f339f56508f442adcafe7c7f17f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Data>k__BackingField: {fileID: 11400000, guid: 3a8f62b8cdd4cf644823133ad4b6a8a5, type: 2}
   <GameOverScreen>k__BackingField: {fileID: 524196858}
   <HarvestTimer>k__BackingField: {fileID: 60848741}
   <EatingTimer>k__BackingField: {fileID: 1827791722}
@@ -2437,6 +2436,21 @@ MonoBehaviour:
   <PeasantText>k__BackingField: {fileID: 1563215225}
   <WarriorText>k__BackingField: {fileID: 1126898400}
   <EatingText>k__BackingField: {fileID: 1304853322}
+  <PeasantCount>k__BackingField: 3
+  <WarriorsCount>k__BackingField: 0
+  WheatCount: 10
+  <WheatPerPeasant>k__BackingField: 2
+  <WheatToWarrriors>k__BackingField: 5
+  <PeasantCost>k__BackingField: 4
+  <WarriorCost>k__BackingField: 8
+  <PeasantCreateTime>k__BackingField: 5
+  <WarriorCreateTime>k__BackingField: 8
+  <RaidMaxTime>k__BackingField: 20
+  <RaidIncrease>k__BackingField: 2
+  <NextRaid>k__BackingField: 0
+  <PeasantTimer>k__BackingField: -2
+  <WarriorTimer>k__BackingField: -2
+  <RaidTimer>k__BackingField: 0
 --- !u!4 &1812977098
 Transform:
   m_ObjectHideFlags: 0
@@ -2676,7 +2690,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1812977097}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OnClickCreatePeasant
+        m_MethodName: CreatePeasant
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

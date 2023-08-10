@@ -17,12 +17,13 @@ public class ImageTimer : MonoBehaviour
     {
         Tick = false;
         _currentTime -= Time.deltaTime;
-         _img.fillAmount = _currentTime / _time;
-
+        
          if(_currentTime <= 0)
          {
             Tick = true;
             _currentTime = _time;
          }
+
+        _img.fillAmount = _currentTime / _time;
     }
 }
