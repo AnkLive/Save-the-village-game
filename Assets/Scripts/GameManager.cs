@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
 
     private void GameOver() 
     {
-        if(Data.WarriorsCount == 0 || Data.WheatCount == 0)
+        if(Data.WarriorsCount < 0 || Data.WheatCount < 0)
         {
             Time.timeScale = 0;
             GameOverScreen.SetActive(true);
